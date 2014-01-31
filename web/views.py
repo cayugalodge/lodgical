@@ -13,7 +13,10 @@ def home(request):
     return render_to_response("index.html", context, context_instance=RequestContext(request))
 
 def about(request):
-    about = About.objects.get()
+    try:
+        about = About.objects.get()
+    except About.DoesNotExist:
+        about = None
     context = {'about' : about}
     return render_to_response("about.html", context, context_instance=RequestContext(request))
 
