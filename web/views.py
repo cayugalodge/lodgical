@@ -37,7 +37,7 @@ def add_alum(request):
         return HttpResponse("error")
 
 def mosey(request):
-    events = MoseyEvent.objects.all().order_by('-start_date')
+    events = MoseyEvent.objects.all().order_by('start_date')
     context = {'events' : events}
     return render_to_response("mosey.html", context, context_instance=RequestContext(request))
 

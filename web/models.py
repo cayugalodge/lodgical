@@ -27,6 +27,8 @@ class About(models.Model):
 class Alumni(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
+    def __unicode__(self):
+        return u'%s' % self.name
 
 class Contact(models.Model):
     name = models.CharField(max_length=255)
@@ -43,8 +45,14 @@ class Moseyer(models.Model):
     year = models.CharField(max_length=255, choices=YEAR_CHOICES)
     picture = models.ImageField(max_length=255, upload_to="moseyers/", blank=True)
 
+    def __unicode__(self):
+        return u'%s %s' % (self.first_name, self.last_name)
+
 class MoseyEvent(models.Model):
     name = models.CharField(max_length=255)
     start_date = models.DateTimeField(default=datetime.now)
     end_date = models.DateTimeField(default=datetime.now)
     description = models.TextField(max_length=2048)
+
+    def __unicode__(self):
+        return u'%s' % self.name
