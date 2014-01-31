@@ -8,7 +8,7 @@ from forms import AlumniForm, MoseyerForm
 # Create your views here.
 
 def home(request):
-    articles = NewsArticle.objects.all()[:10]
+    articles = NewsArticle.objects.all().order_by('-date')[:10]
     context = {'news' : articles}
     return render_to_response("index.html", context, context_instance=RequestContext(request))
 
