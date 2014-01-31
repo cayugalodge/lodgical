@@ -1,0 +1,31 @@
+// Colors
+$primary-color: #000000;
+$secondary-color: #6E3A3B;
+$white: #FFFFFF;
+$greengo: #07AD1F;
+$redstop: #AD0707;
+
+// Fonts
+$base-font: "Quicksand", Helvetica, Verdana, Arial, sans-serif;
+$title-font: "Just Me Again Down Here", serif;
+$base-font-size: 110%;
+
+// Links
+$base-link-color: $primary-color;
+$alt-link-color: $secondary-color;
+
+// Borders
+$border-width: 4px;
+$border-color: $secondary-color;
+
+// Alignment
+$side-margin: 10%;
+$base-width: 100% - 2 * $side-margin;
+
+// Modules
+@import "compass/reset";
+@import "compass/utilities";
+@import "compass/css3";
+
+//Partials
+@import "partials/layout";

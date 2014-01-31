@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block content %}
+
+<div class="intro_block" id="new_mosey">
+    Welcome to Cayuga Lodge!
+    <h3> Mosey Signup </h3>
+</div>
+
+<div class="content">
+    <form enctype="multipart/form-data" action="/mosey/add/" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Submit" /></p>
+    </form>
+    </div>
+
+{% endblock %}
