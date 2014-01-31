@@ -20,9 +20,9 @@ PRODUCTION = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'okdehyg^xqoa4=ycw-nku3d#3#p3e%+p-+fi0l)yb3@etonux8'
-AWS_ACCESS_KEY_ID         = 'AKIAIZPPVQ6HYQ5CV3RA'
-AWS_SECRET_ACCESS_KEY     = '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'
-AWS_STORAGE_BUCKET_NAME   = 'coproject-assets'
+AWS_ACCESS_KEY_ID         = 'AKIAIG2PABP3MBS7QUAA'
+AWS_SECRET_ACCESS_KEY     = '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'
+AWS_STORAGE_BUCKET_NAME   = 'cayugalodge'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -125,6 +125,26 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+)
+
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+# Static asset configuration
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
 )
 
 if PRODUCTION:
