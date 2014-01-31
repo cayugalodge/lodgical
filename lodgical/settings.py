@@ -13,7 +13,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #BASE_DIR = os.path.dirname(__file__)
 
-PRODUCTION = False
+PRODUCTION = True
 
 
 # Quick-start development settings - unsuitable for production
@@ -153,8 +153,8 @@ if PRODUCTION:
     MEDIA_ROOT  = '/media/'
     TEMP_MEDIA = '//app/media/'
 
-    DEFAULT_FILE_STORAGE = 'coproject.storage.S3MediaStorage'
-    STATICFILES_STORAGE = 'coproject.storage.S3StaticStorage'
+    DEFAULT_FILE_STORAGE = 'lodgical.storage.S3MediaStorage'
+    STATICFILES_STORAGE = 'lodgical.storage.S3StaticStorage'
     STATIC_URL = 'https://s3.amazonaws.com/cayugalodge/static/'
     MEDIA_URL = 'https://s3.amazonaws.com/cayugalodge/media/'
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
