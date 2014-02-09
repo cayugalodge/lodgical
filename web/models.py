@@ -44,6 +44,7 @@ class Moseyer(models.Model):
     email = models.EmailField()
     year = models.CharField(max_length=255, choices=YEAR_CHOICES)
     picture = models.ImageField(max_length=255, upload_to="moseyers/", blank=True)
+    application = models.FileField(upload_to='moseyapps/', default="", blank=True)
 
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)
