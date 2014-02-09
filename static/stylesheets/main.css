@@ -406,3 +406,21 @@ h3 img {
   margin-bottom: 25px;
   display: none;
 }
+
+/* line 297, ../sass/partials/_layout.scss */
+.moseyer {
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+  word-wrap: break-word;
+  margin-top: 20px;
+  margin-left: 8px;
+}
+/* line 305, ../sass/partials/_layout.scss */
+.moseyer img {
+  width: 200px;
+}
+/* line 309, ../sass/partials/_layout.scss */
+.moseyer p {
+  margin-bottom: 2px;
+}

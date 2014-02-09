@@ -294,4 +294,21 @@ h3 {
     @include hidden_message($greengo);
 }
 
+.moseyer {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    word-wrap: break-word;
+    margin-top: 20px;
+    margin-left: 8px;
+
+    img {
+        width: 200px;
+    }
+
+    p {
+        margin-bottom: 2px;
+    }
+}
+
 

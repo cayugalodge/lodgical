@@ -56,3 +56,8 @@ def add_mosey(request):
         form = MoseyerForm()
 
     return render(request, "mosey_signup.html", {'form' : form, })
+
+def mosey_view(request):
+    moseyers = Moseyer.objects.all()
+    context = {'moseyers' : moseyers}
+    return render_to_response("moseyer_list.html", context, context_instance=RequestContext(request))

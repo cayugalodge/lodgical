@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="intro_block" id="new_mosey">
+    Cayuga Lodge Mosey
+    <h3> DECISION 2014 </h3>
+</div>
+
+<div class="content">
+    {% for moseyer in moseyers %}
+    <div class="moseyer">
+    {% if moseyer.picture %}
+    <img src="{{ moseyer.picture.url }}" width="200px">
+    {% endif %}
+    <p>{{ moseyer.first_name }} {{ moseyer.last_name }}</p>
+    <p>{{ moseyer.year }} </p>
+    <p><a href="{{ moseyer.application }}">Application</a></p>
+</div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
