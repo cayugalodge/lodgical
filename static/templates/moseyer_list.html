@@ -10,7 +10,9 @@
     {% for moseyer in moseyers %}
     <div class="moseyer">
     {% if moseyer.picture %}
-    <img src="{{ moseyer.picture.url }}" width="200px">
+    <div class="img_ctr">
+    <img src="{{ moseyer.picture.url }}">
+</div>
     {% endif %}
     <p>{{ moseyer.first_name }} {{ moseyer.last_name }}</p>
     <p>{{ moseyer.year }} </p>

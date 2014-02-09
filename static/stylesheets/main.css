@@ -424,3 +424,10 @@ h3 img {
 .moseyer p {
   margin-bottom: 2px;
 }
+
+/* line 314, ../sass/partials/_layout.scss */
+.img_ctr {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
