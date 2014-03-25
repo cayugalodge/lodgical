@@ -178,12 +178,12 @@ h2 {
 }
 /* line 111, ../sass/partials/_layout.scss */
 #navigation a:hover {
-  font-weight: bold;
   color: #6e3a3b;
+  font-weight: normal;
   text-decoration: none;
 }
 
-/* line 118, ../sass/partials/_layout.scss */
+/* line 119, ../sass/partials/_layout.scss */
 .intro_block {
   display: block;
   margin-right: 20%;
@@ -194,40 +194,40 @@ h2 {
   text-align: center;
 }
 @media screen and (min-width: 960px) {
-  /* line 118, ../sass/partials/_layout.scss */
+  /* line 119, ../sass/partials/_layout.scss */
   .intro_block {
     width: 643px;
     margin-left: auto;
     margin-right: auto;
   }
 }
-/* line 124, ../sass/partials/_layout.scss */
+/* line 125, ../sass/partials/_layout.scss */
 .intro_block img {
   width: 641px;
 }
 
-/* line 130, ../sass/partials/_layout.scss */
+/* line 131, ../sass/partials/_layout.scss */
 #new_mosey {
   text-align: center;
   font-size: 400%;
   font-family: "Just Me Again Down Here", serif;
 }
 
-/* line 137, ../sass/partials/_layout.scss */
+/* line 138, ../sass/partials/_layout.scss */
 h3 {
   font-weight: bold;
   color: #6e3a3b;
   font-size: 50%;
   font-family: "Quicksand", Helvetica, Verdana, Arial, sans-serif;
 }
-/* line 142, ../sass/partials/_layout.scss */
+/* line 143, ../sass/partials/_layout.scss */
 h3 img {
   margin-bottom: -10px;
   margin-right: 5px;
   width: 50px !important;
 }
 
-/* line 150, ../sass/partials/_layout.scss */
+/* line 151, ../sass/partials/_layout.scss */
 .content {
   display: block;
   margin-right: 20%;
@@ -238,142 +238,142 @@ h3 img {
   border: 2px solid #6e3a3b;
 }
 @media screen and (min-width: 960px) {
-  /* line 150, ../sass/partials/_layout.scss */
+  /* line 151, ../sass/partials/_layout.scss */
   .content {
     width: 643px;
     margin-left: auto;
     margin-right: auto;
   }
 }
-/* line 156, ../sass/partials/_layout.scss */
+/* line 157, ../sass/partials/_layout.scss */
 .content h1 {
   background: white;
   margin-top: -24px;
   margin-left: 20px;
   padding-left: 10px;
 }
-/* line 163, ../sass/partials/_layout.scss */
+/* line 164, ../sass/partials/_layout.scss */
 .content p {
   padding: 0px 45px;
   padding-left: 50px;
   margin-bottom: 25px;
 }
-/* line 169, ../sass/partials/_layout.scss */
+/* line 170, ../sass/partials/_layout.scss */
 .content #news {
   width: 136px;
 }
-/* line 171, ../sass/partials/_layout.scss */
+/* line 172, ../sass/partials/_layout.scss */
 .content #news img {
   width: 122px;
 }
-/* line 176, ../sass/partials/_layout.scss */
+/* line 177, ../sass/partials/_layout.scss */
 .content #info {
   margin-top: -30px;
   width: 310px;
 }
-/* line 179, ../sass/partials/_layout.scss */
+/* line 180, ../sass/partials/_layout.scss */
 .content #info img {
   width: 296px;
 }
-/* line 184, ../sass/partials/_layout.scss */
+/* line 185, ../sass/partials/_layout.scss */
 .content #history {
   margin-top: -30px;
   width: 175px;
 }
-/* line 187, ../sass/partials/_layout.scss */
+/* line 188, ../sass/partials/_layout.scss */
 .content #history img {
   width: 158px;
 }
-/* line 192, ../sass/partials/_layout.scss */
+/* line 193, ../sass/partials/_layout.scss */
 .content #living {
   width: 142px;
 }
-/* line 194, ../sass/partials/_layout.scss */
+/* line 195, ../sass/partials/_layout.scss */
 .content #living img {
   width: 126px;
 }
-/* line 199, ../sass/partials/_layout.scss */
+/* line 200, ../sass/partials/_layout.scss */
 .content #hashtag {
   width: 218px;
 }
-/* line 201, ../sass/partials/_layout.scss */
+/* line 202, ../sass/partials/_layout.scss */
 .content #hashtag img {
   width: 204px;
 }
-/* line 206, ../sass/partials/_layout.scss */
+/* line 207, ../sass/partials/_layout.scss */
 .content #alum {
   width: 160px;
 }
-/* line 208, ../sass/partials/_layout.scss */
+/* line 209, ../sass/partials/_layout.scss */
 .content #alum img {
   width: 141px;
 }
-/* line 213, ../sass/partials/_layout.scss */
+/* line 214, ../sass/partials/_layout.scss */
 .content #alummail {
   width: 280px;
 }
-/* line 215, ../sass/partials/_layout.scss */
+/* line 216, ../sass/partials/_layout.scss */
 .content #alummail img {
   width: 268px;
 }
-/* line 220, ../sass/partials/_layout.scss */
+/* line 221, ../sass/partials/_layout.scss */
 .content #mosey {
   width: 160px;
 }
-/* line 222, ../sass/partials/_layout.scss */
+/* line 223, ../sass/partials/_layout.scss */
 .content #mosey img {
   width: 146px;
 }
-/* line 227, ../sass/partials/_layout.scss */
+/* line 228, ../sass/partials/_layout.scss */
 .content #mosey_events {
   margin-top: -30px;
   width: 235px;
 }
-/* line 230, ../sass/partials/_layout.scss */
+/* line 231, ../sass/partials/_layout.scss */
 .content #mosey_events img {
   width: 218px;
 }
-/* line 235, ../sass/partials/_layout.scss */
+/* line 236, ../sass/partials/_layout.scss */
 .content #contact {
   width: 170px;
 }
-/* line 237, ../sass/partials/_layout.scss */
+/* line 238, ../sass/partials/_layout.scss */
 .content #contact img {
   width: 142px;
 }
-/* line 242, ../sass/partials/_layout.scss */
+/* line 243, ../sass/partials/_layout.scss */
 .content #location {
   width: 168px;
 }
-/* line 244, ../sass/partials/_layout.scss */
+/* line 245, ../sass/partials/_layout.scss */
 .content #location img {
   width: 147px;
 }
-/* line 249, ../sass/partials/_layout.scss */
+/* line 250, ../sass/partials/_layout.scss */
 .content #map {
   width: 100%;
   text-align: center;
   margin: 25px 0px 50px 0px;
 }
-/* line 255, ../sass/partials/_layout.scss */
+/* line 256, ../sass/partials/_layout.scss */
 .content .date {
   font-weight: bold;
   color: #6e3a3b;
   padding-left: 25px;
 }
-/* line 260, ../sass/partials/_layout.scss */
+/* line 261, ../sass/partials/_layout.scss */
 .content .mosey_event {
   font-size: 110%;
   font-weight: bold;
   padding-top: 15px;
   padding-left: 25px;
 }
-/* line 267, ../sass/partials/_layout.scss */
+/* line 268, ../sass/partials/_layout.scss */
 .content form {
   margin: 25px;
 }
 
-/* line 272, ../sass/partials/_layout.scss */
+/* line 273, ../sass/partials/_layout.scss */
 #instafeed {
   margin-left: auto;
   margin-right: auto;
@@ -381,7 +381,7 @@ h3 img {
   padding-top: 1%;
   padding-bottom: 1%;
 }
-/* line 279, ../sass/partials/_layout.scss */
+/* line 280, ../sass/partials/_layout.scss */
 #instafeed img {
   width: 120px;
   height: 120px;
@@ -391,7 +391,7 @@ h3 img {
   box-shadow: 3px 1px 7px #BDB7BB;
 }
 
-/* line 289, ../sass/partials/_layout.scss */
+/* line 290, ../sass/partials/_layout.scss */
 #error_msg, #problem_msg {
   color: #ad0707;
   margin-left: 50px;
@@ -399,7 +399,7 @@ h3 img {
   display: none;
 }
 
-/* line 293, ../sass/partials/_layout.scss */
+/* line 294, ../sass/partials/_layout.scss */
 #success_msg {
   color: #07ad1f;
   margin-left: 50px;
@@ -407,7 +407,7 @@ h3 img {
   display: none;
 }
 
-/* line 297, ../sass/partials/_layout.scss */
+/* line 298, ../sass/partials/_layout.scss */
 .moseyer {
   display: inline-block;
   text-align: center;
@@ -416,16 +416,16 @@ h3 img {
   margin-top: 20px;
   margin-left: 8px;
 }
-/* line 305, ../sass/partials/_layout.scss */
+/* line 306, ../sass/partials/_layout.scss */
 .moseyer img {
   width: 200px;
 }
-/* line 309, ../sass/partials/_layout.scss */
+/* line 310, ../sass/partials/_layout.scss */
 .moseyer p {
   margin-bottom: 2px;
 }
 
-/* line 314, ../sass/partials/_layout.scss */
+/* line 315, ../sass/partials/_layout.scss */
 .img_ctr {
   width: 200px;
   height: 150px;
