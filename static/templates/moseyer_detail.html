@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="intro_block" id="new_mosey">
+    <h3> {{ object.first_name }} {{ object.last_name }} </h3>
+    <h5><a href="{% url 'view_moseyers' %}"><img src={% static "images/arrow.png" %}>Back</a></h5>
+</div>
+
+<div class="content" id="mosey_detail">
+    {% if object.picture %}
+    <img src="{{ object.picture.url }}">
+    {% else %}
+    -- No picture provided --
+    {% endif %}
+</div>
+
+<div class="content">
+    <h1 id="hashtag"><img src="{% static "images/header_comments.png" %}"></h1>
+    {% for comment in comments %}
+    <div class="date">{{ comment.author.first_name }} {{ comment.author.last_name }} @ {{ comment.created }} </div>
+    <p>
+    {{ comment.text | linebreaks }}
+    </p> 
+    {% endfor %}
+    <br/>
+    <p class="sub_head">Add comment: </p>
+    <form enctype="multipart/form-data" action="/mosey/decision/comment/{{ object.id }}/" method="post">{% csrf_token %}
+    <textarea cols="40" id="id_text" name="text" rows="10"></textarea></p>
+    <p><input type="submit" value="Submit" /></p>
+    </form>
+</div>
+
+<div class="content">
+    <h1 id="hashtag"><img src="{% static "images/header_application.png" %}"></h1>
+    {% if object.application %}
+    <p>
+        {{ object.application | linebreaks }}
+    </p>
+    {% else %}
+    <p> -- No application provided -- </p>
+    {% endif %}
+</div>
+
+
+
+{% endblock %}

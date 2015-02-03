@@ -1,9 +1,13 @@
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.views.generic.detail import DetailView
+from django.contrib.auth.decorators import login_required
 
-from models import NewsArticle, About, Contact, Alumni, Moseyer, MoseyEvent
-from forms import AlumniForm, MoseyerForm
+from models import NewsArticle, About, Contact, Alumni, Moseyer, MoseyEvent, MoseyerComment
+from forms import AlumniForm, MoseyerForm, CommentForm
 
 # Create your views here.
 
@@ -57,7 +61,55 @@ def add_mosey(request):
 
     return render(request, "mosey_signup.html", {'form' : form, })
 
+@login_required
 def mosey_view(request):
     moseyers = Moseyer.objects.all()
     context = {'moseyers' : moseyers}
     return render_to_response("moseyer_list.html", context, context_instance=RequestContext(request))
+
+def lodgical_login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    context = {}
+    form = AuthenticationForm()
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+        else:
+            context.update({'form': form, 'error': 'Your account has been disabled.'})
+    else:
+        context.update({'form': form, 'error': 'Invalid login information.'})
+    return render_to_response("lodgical.html", context, context_instance=RequestContext(request))
+
+
+def lodgical_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/lodgical/')
+
+
+def lodgical(request):
+    form = AuthenticationForm()
+    return render_to_response("lodgical.html", {'form' : form}, context_instance=RequestContext(request))
+
+class MoseyerDetailView(DetailView):
+    model = Moseyer
+
+    def get_context_data(self, **kwargs):
+        context = super(MoseyerDetailView, self).get_context_data(**kwargs)
+        context['comments'] = MoseyerComment.objects.filter(author=self.object.id)
+        context['commentform'] = CommentForm()
+        return context
+
+@login_required
+def add_comment(request, pk):
+    if request.user.is_authenticated():
+        if request.POST.has_key("text") and request.POST["text"]:
+            author = request.user
+            comment = MoseyerComment(moseyer=Moseyer.objects.get(pk=pk))
+            cf = CommentForm(request.POST, instance=comment)
+            comment = cf.save(commit=False)
+            comment.author = author
+            comment.save()
+    return HttpResponseRedirect("/mosey/decision/{}".format(pk))
+

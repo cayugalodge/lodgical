@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 YEAR_CHOICES = (
         ('Freshman', 'Freshman'),
@@ -44,10 +45,20 @@ class Moseyer(models.Model):
     email = models.EmailField()
     year = models.CharField(max_length=255, choices=YEAR_CHOICES)
     picture = models.ImageField(max_length=255, upload_to="moseyers/", blank=True)
-    application = models.CharField(max_length=1024, default="", blank=True)
+    application = models.TextField(max_length=10000, default="", blank=True)
 
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)
+
+class MoseyerComment(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User)
+    moseyer = models.ForeignKey(Moseyer)
+    text = models.TextField(max_length=2048)
+
+    def __unicode__(self):
+        return unicode("%s: %s" % (self.moseyer, self.text[:60]))
+
 
 class MoseyEvent(models.Model):
     name = models.CharField(max_length=255)

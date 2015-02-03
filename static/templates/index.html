@@ -41,7 +41,7 @@
         limit: 50,
         resolution: 'standard_resolution',
         {% verbatim %}
-        template: '<a href="{{image}}" rel="lightbox" title="{{caption}}"><img src="{{image}}" /></a>'
+        template: '<a href="{{image}}" rel="lightbox-hashtag" title="{{caption}}"><img src="{{image}}" /></a>'
         {% endverbatim %}
     });
     feed.run();
@@ -50,7 +50,8 @@
         var $this = $(this);
         if(!$this.data('loaded')){
             e.preventDefault();
-            $this.slimbox().data('loaded', true).click();
+            // $this.slimbox().data('loaded', true).click();
+            jQuery("#instafeed a").slimbox();
         }   
     });
 </script>

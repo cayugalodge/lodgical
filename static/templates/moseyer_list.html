@@ -3,23 +3,24 @@
 {% block content %}
 <div class="intro_block" id="new_mosey">
     Cayuga Lodge Mosey
-    <h3> DECISION 2014 </h3>
+    <h3> DECISION {% now "Y" %} </h3>
 </div>
 
-<div class="content">
+<div class="content" id="moseyers">
     {% for moseyer in moseyers %}
     <div class="moseyer">
     {% if moseyer.picture %}
     <div class="img_ctr">
-    <a href="{{ moseyer.picture.url }}" target="_blank"><img src="{{ moseyer.picture.url }}"></a>
+    <a href="/mosey/decision/{{ moseyer.id }}/" target="_blank"><img src="{{ moseyer.picture.url }}"></a>
 </div>
     {% endif %}
     <p>{{ moseyer.first_name }} {{ moseyer.last_name }}</p>
     <p>{{ moseyer.year }} </p>
-    <p><a href="{{ moseyer.application }}" target="_blank">Application</a></p>
 </div>
     {% endfor %}
 </div>
+
+</script>
 
 
 {% endblock %}

@@ -4,7 +4,28 @@
 {% block content %}
 
 <div class="intro_block">
-    <img src="{% static "images/comingsoon.png" %} " alt="Lodgical is coming soon!" />
+    <img src="{% static "images/intro_lodgical.png" %} " alt="Lodgical is the lodge's internal site." />
 </div>
+
+{% if user.is_authenticated %}
+
+<div class="content">
+    <h1 id="dash"><img src="{% static "images/header_dashboard.png" %}"></h1>
+    <p class="sub_head">
+    -- <a href="{% url 'view_moseyers' %}">view moseyers</a> --
+</p>
+</div> 
+
+{% else %}
+
+<div class="content">
+    <h1 id="news"><img src="{% static "images/header_login.png" %}"></h1>
+    <form enctype="multipart/form-data" action="/lodgical/login/" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Submit" /></p>
+    </form>
+</div> 
+
+{% endif %}
 
 {% endblock %}

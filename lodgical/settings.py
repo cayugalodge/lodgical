@@ -26,7 +26,7 @@ AWS_SECRET_ACCESS_KEY     = os.environ.get('AWS_SECRET_ACCESS_KEY', "")
 AWS_STORAGE_BUCKET_NAME   = 'cayugalodge'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -138,6 +138,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
+LOGIN_URL = '/lodgical/' 
 
 # Static asset configuration
 # import os
