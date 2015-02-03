@@ -13,7 +13,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #BASE_DIR = os.path.dirname(__file__)
 
-PRODUCTION = True
+PRODUCTION = False
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +26,7 @@ AWS_SECRET_ACCESS_KEY     = os.environ.get('AWS_SECRET_ACCESS_KEY', "")
 AWS_STORAGE_BUCKET_NAME   = 'cayugalodge'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
