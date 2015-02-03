@@ -97,7 +97,7 @@ class MoseyerDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(MoseyerDetailView, self).get_context_data(**kwargs)
-        context['comments'] = MoseyerComment.objects.all().filter(author=self.object.id)
+        context['comments'] = MoseyerComment.objects.filter(moseyer=self.object.id)
         context['commentform'] = CommentForm()
         return context
 
