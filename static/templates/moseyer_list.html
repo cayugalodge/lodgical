@@ -14,7 +14,7 @@
     <a href="/mosey/decision/{{ moseyer.id }}/" target="_blank"><img src="{{ moseyer.picture.url }}"></a>
 </div>
     {% endif %}
-    <p>{{ moseyer.first_name }} {{ moseyer.last_name }}</p>
+    <p><a href="/mosey/decision/{{ moseyer.id }}/">{{ moseyer.first_name }} {{ moseyer.last_name }}</a></p>
     <p>{{ moseyer.year }} </p>
 </div>
     {% endfor %}
