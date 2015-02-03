@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.views.generic.detail import DetailView
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
 
 from models import NewsArticle, About, Contact, Alumni, Moseyer, MoseyEvent, MoseyerComment
 from forms import AlumniForm, MoseyerForm, CommentForm
@@ -61,9 +62,13 @@ def add_mosey(request):
 
     return render(request, "mosey_signup.html", {'form' : form, })
 
+    top_users = User.objects.filter(problem_user=False) \
+                .annotate(num_submissions=Count('submission')) \
+                .order_by('-num_submissions')
+
 @login_required
 def mosey_view(request):
-    moseyers = Moseyer.objects.all()
+    moseyers = Moseyer.objects.all().annotate(num_comments=Count('moseyercomment')).order_by('-num_comments')
     context = {'moseyers' : moseyers}
     return render_to_response("moseyer_list.html", context, context_instance=RequestContext(request))
 
