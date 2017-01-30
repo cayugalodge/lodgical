@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^voting.php/', name='voting'),
     url(r'^$', 'web.views.home', name="home"),
     url(r'^about/$', 'web.views.about', name="about"),
     url(r'^alumni/$', 'web.views.alumni', name="alumni"),
